@@ -1,4 +1,4 @@
-package tema_24_11_2018;
+package tema_1_24112018;
 import java.util.Scanner;
 
 public class Main {
