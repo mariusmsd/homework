@@ -7,4 +7,6 @@ public interface Vehicle {
 	public void stop();
 
 	public void drive();
+
+	public void drive(float f);
 }
