@@ -1,37 +1,25 @@
 package tema_3_22122018_1;
 
-public interface VWGolf {
+public class VWGolf extends VW {
 
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.VW#getAvailableFuel()
-	 */
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.Mercedes#getAvailableFuel()
-	 */
-	float getAvailableFuel();
+	
 
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.VW#setAvailableFuel(float)
-	 */
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.Mercedes#setAvailableFuel(float)
-	 */
-	void setAvailableFuel(float availableFuel);
+	@Override
+	public void start() {
+		// TODO Auto-generated method stub
 
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.VW#getChassisNumber()
-	 */
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.Mercedes#getChassisNumber()
-	 */
-	String getChassisNumber();
+	}
 
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.VW#setChassisNumber(java.lang.String)
-	 */
-	/* (non-Javadoc)
-	 * @see com.oop_homework21.Mercedes#setChassisNumber(java.lang.String)
-	 */
-	void setChassisNumber(String chassisNumber);
+	@Override
+	public void stop() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void drive() {
+		// TODO Auto-generated method stub
+
+	}
 
 }
