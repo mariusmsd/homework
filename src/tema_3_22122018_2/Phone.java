@@ -10,6 +10,7 @@ public abstract class Phone {
 	private String imei;
 	ArrayList<Contacts> myContactList;
 	ArrayList<Messages> myMessagesList;
+	ArrayList<String> myCallList;
 	
 	
 	
@@ -18,30 +19,53 @@ public abstract class Phone {
 	public void createMemory() {
 		myContactList=new ArrayList<Contacts>();
 		myMessagesList=new ArrayList<Messages>();
+		myCallList=new ArrayList<String>();
 	}
 
 	public void addContact(int o, String pN,String fN, String lN) {
 		Contacts c=new Contacts(o,pN,fN,lN);
-//		System.out.println(c.getFirstName());
 		myContactList.add(c);
-		
-		
-		
-		
+	
 	}
 	public void listContacts() {
+		int listSize=myContactList.size();
+		System.out.println("Afisare lista contacte:");
+		for(int i=0;i<listSize;i++){
+			Contacts x = myContactList.get(i);
+			System.out.println(x.getOrder() +" * " +x.getPhoneNumber() +" * " +x.getFirstName() +" * " +x.getLastName());
+		}
 		
 	}
-	public void sendSMS() {
+	public void sendSMS(String pN,String smsC) {
+		Messages m=new Messages(pN, smsC);
+		myMessagesList.add(m);
+		this.setBatteryLife(getBatteryLife()-1);
 		
 	}
-	public void listSMS() {
+	public void listSMS(String pN) {
+		System.out.println("Afisare lista SMS-uri pentru numarul " +pN);
+		int listSize=myMessagesList.size();
+		for(int i=0;i<listSize;i++){
+			Messages m=myMessagesList.get(i);
+			
+			if(m.getPhoneNumber().equals(pN)) {
+				System.out.println(m.getSmsContent());
+			}
+		}
 		
 	}
-	public void call() {
+	public void call(String pN) {
+		myCallList.add(pN);
+		System.out.println("Apel catre " +pN + " initiat");
+		this.setBatteryLife(getBatteryLife()-2);
 		
 	}
 	public void callList() {
+		System.out.println("Afisare lista apeluri ");
+		int listSize=myCallList.size();
+		for(int i=0;i<listSize;i++){
+			System.out.println(myCallList.get(i));
+		}
 		
 	}
 	

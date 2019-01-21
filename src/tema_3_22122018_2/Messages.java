@@ -12,9 +12,12 @@ public class Messages {
 		if(smsC.length()<=500) {
 			this.phoneNumber=pN;
 			this.smsContent=smsC;
+			System.out.println("Mesaj transmis");
 		}
 		else {
 			System.out.println("Nu se pot transmite mesaje mai lungi de 500 de caractere.");
+			this.phoneNumber=pN;
+			this.smsContent="Error: Mesajul nu a fost transmis (lunigme mai mare de 500 de caractere)";
 		}
 		
 	}
