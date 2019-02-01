@@ -24,7 +24,7 @@ public class StringPalindrom {
 		this.str = str;
 	}
 	
-	public String checkPalindrom(String A) {
+	public String checkPalindrom(String A) {//A nu e un nume correct dupa naming conventions, ar fi trebuit cu litera mica
 		
 		String check;
 		char c[] = new char[A.length()];

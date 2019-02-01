@@ -14,19 +14,22 @@ public class Pct_1_test_suma_diag_p {
 	@Before
 	public void setUp() {
 	 mtrx=new Matrix();
+	 //ce zici daca iti setai asa elementele metricei, si apoi te foloseai de ea in teste?
+	 //in felul asta ai fi eliminat duplicarea deranjanta a declararii si initializarii unui array bidimensional 
+	 //in fiecare test case
+	 mtrx.setMx(new int[][] {
+			 {2, 3, 4, 5, 6}, 
+			 {3, 4, 5, 6, 7}, 
+			 {4, 5, 6, 7, 8}, 
+			 {5, 6, 7, 8, 9}, 
+			 {6, 7, 8, 9, 10}
+	 });
 	}
 	
 	@Test
 	public void test_suma_diag_p1() {
-		
-		int[][] m=new int[5][5];		
-		for (int i = 0; i <= 4; i++) {
-			for (int j = 0; j <= 4; j++) {
-				m[i][j]=1;
-			}
-		}	
-		int result=mtrx.sumaDiagP(m);
-		assertEquals(5,result,0.0);	
+		assertEquals(30, mtrx.sumaDiagP(mtrx.getMx()));
+		//assertEquals(5,result,0.0);	
 	}
 	
 	@Test
@@ -39,7 +42,8 @@ public class Pct_1_test_suma_diag_p {
 			}
 		}	
 		int result=mtrx.sumaDiagP(m);
-		assertEquals(10,result,0.0);	
+		assertEquals(10,result);	
+		//assertEquals(10,result,0.0);	
 	}
 	
 	@Test
@@ -52,7 +56,8 @@ public class Pct_1_test_suma_diag_p {
 			}
 		}	
 		int result=mtrx.sumaDiagP(m);
-		assertEquals(0,result,0.0);	
+		assertEquals(0,result);	
+		//assertEquals(0,result,0.0);	
 	}
 	
 	@Test
@@ -65,6 +70,7 @@ public class Pct_1_test_suma_diag_p {
 			}
 		}	
 		int result=mtrx.sumaDiagS(m);
+		assertEquals(5,result,0.0);	
 		assertEquals(5,result,0.0);	
 	}
 	
