@@ -5,20 +5,20 @@ public class Rectangle implements Shape {
 	private int lat;
 
 	public Rectangle(int l1, int l2) {
-		this.lung=l1;
-		this.lat=l2;
+		this.lung = l1;
+		this.lat = l2;
 	}
-	
+
 	public double area() {
-		double a=0;
-	a=this.getLung()*this.getLat();
-	return a;
+		double a = 0;
+		a = this.getLung() * this.getLat();
+		return a;
 	}
-	
+
 	public double perim() {
-		double p=0;
-	p=this.getLat()*2+this.getLung()*2;
-	return p;
+		double p = 0;
+		p = this.getLat() * 2 + this.getLung() * 2;
+		return p;
 	}
 
 	public int getLung() {

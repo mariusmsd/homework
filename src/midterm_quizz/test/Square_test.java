@@ -8,7 +8,10 @@ import org.junit.Test;
 
 import midterm_quizz.Square;
 
-
+/*
+ * Nu era nevoie sa faci un test pentru fiecare tip de shape in parte
+ * In fine, daca ai facut nu-i nimic gresit
+ */
 public class Square_test {
 	
 	private Square s;
