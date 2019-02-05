@@ -47,10 +47,40 @@ public class Triangle implements Shape {
 		this.l3 = l3;
 	}
 
-	public static void main(String args[]) {
-		Triangle t = new Triangle(2, 3, 3);
-		System.out.println(t.area());
-		System.out.println(t.perim());
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + l1;
+		result = prime * result + l2;
+		result = prime * result + l3;
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Triangle)) {
+			return false;
+		}
+		Triangle other = (Triangle) obj;
+		if (l1 != other.l1) {
+			return false;
+		}
+		if (l2 != other.l2) {
+			return false;
+		}
+		if (l3 != other.l3) {
+			return false;
+		}
+		return true;
+	}
+
+	
 
 }

@@ -37,4 +37,34 @@ public class Rectangle implements Shape {
 		this.lat = lat;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + lat;
+		result = prime * result + lung;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Rectangle)) {
+			return false;
+		}
+		Rectangle other = (Rectangle) obj;
+		if (lat != other.lat) {
+			return false;
+		}
+		if (lung != other.lung) {
+			return false;
+		}
+		return true;
+	}
+
 }

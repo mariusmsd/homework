@@ -32,4 +32,32 @@ public class Circle implements Shape {
 		this.raza = raza;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + raza;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (!(obj instanceof Circle)) {
+			return false;
+		}
+		Circle other = (Circle) obj;
+		if (raza != other.raza) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+
 }

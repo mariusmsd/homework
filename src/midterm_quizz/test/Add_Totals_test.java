@@ -29,7 +29,7 @@ public class Add_Totals_test {
 	}
 
 	@Test //bravo, testul asta nu l-am mai vazut facut decat de o singura persoana pana acum
-	public void Add_test() {
+	public void Add_test() {//dar totusi ai grija la contains din List, pt ca nu functioneaza corect daca nu suprascrii equals
 		Shape c = new Circle(3);
 		assertEquals(false, list.add(c));
 	}
