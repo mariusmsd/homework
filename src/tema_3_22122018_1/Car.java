@@ -10,7 +10,7 @@ public abstract class Car implements Vehicle {
 	private float availableFuel;
 	private int tireSize;
 	private String chassisNumber;
-	private float AverageFuelConsumption;
+	private float AverageFuelConsumption; //cu litera mica
 	
 
 	@Override
