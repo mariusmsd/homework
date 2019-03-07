@@ -6,9 +6,17 @@ import tema_6_09022019.Adresa;
 
 public class Hobby {
 
+
 		private String nume;
 		private int frecventa;
-		private List<Adresa> adrese=new ArrayList<>();
+		private List<Adresa> adrese=new ArrayList<Adresa>();
+		
+		public Hobby(String nume, int frecventa, List<Adresa> adrese) {
+		super();
+		this.nume = nume;
+		this.frecventa = frecventa;
+		this.adrese = adrese;
+		}
 		
 		public String getNume() {
 			return nume;
@@ -31,7 +39,10 @@ public class Hobby {
 			this.adrese.add(adr);
 		}
 		
-		
+		@Override
+		public String toString() {
+			return this.nume+","+frecventa+"\n"+adrese.toString()+"\n";
+		}
 		
 	
 
