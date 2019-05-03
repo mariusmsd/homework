@@ -1,17 +1,17 @@
 package tema_8_02032019_ATM_v2;
 
-import java.util.*;
-import java.io.*;
+import java.io.IOException;
 import java.nio.file.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
 import java.util.function.Function;
+
+import static java.util.stream.Collectors.toMap;
 
 public  class ATM {
 	
 	private Map<String,Client> listaClienti=new HashMap<>();
 	
-	private void read_file(String idClient) {
+	private void read_file(String idClient) throws IOException {
 		
 		Map<String,Client> clientFile=new HashMap<>();
 		List<Cont> cont =new ArrayList<Cont>();
@@ -21,7 +21,7 @@ public  class ATM {
 
 		listaClienti=Files.lines(path)
 					.map(line ->mapToClient(line))
-					.collect(Collectors.toMap(Client::getId, (Client)Function.identity()));
+				.collect(toMap(Client::getId, Function.identity()));
 
 
 		System.out.println(clientFile.get(idClient).getCnp());	
@@ -233,7 +233,7 @@ public  class ATM {
 //		
 //	}
 //	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		ATM atm=new ATM();
 //		atm.start();
