@@ -1,5 +1,6 @@
 package tema_8_02032019_ATM_v2;
-
+//import lombok.Data;
+//@Data
 public class Cont  {
 	
 	private String contIBAN;
@@ -11,6 +12,10 @@ public class Cont  {
 		this.contIBAN = contIBAN;
 		this.pin = pin;
 		this.balanta = balanta;
+	}
+	
+	public Cont() {
+		
 	}
 
 	public String getContIBAN() {
@@ -56,4 +61,10 @@ public class Cont  {
 		}
 		return check;
 	}
+	@Override
+	public String toString() {
+		return this.contIBAN + ","+pin + "," + balanta;
+
+	}
+	
 }

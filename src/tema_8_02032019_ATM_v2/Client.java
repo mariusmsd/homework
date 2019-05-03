@@ -1,18 +1,19 @@
 package tema_8_02032019_ATM_v2;
 
 import java.util.*;
-
+//import lombok.Data;
+//@Data
 public class Client {
 	
 	private String nume;
 	private String prenume;
 	private String id_client;
 	private String cnp;
-	private List<Cont> listaConturi=new ArrayList<Cont>();
+	private Cont listaConturi=new Cont();
 	
 	
 	
-	public Client(String prenume, String nume, String id, String cnp, List<Cont> listaConturi) {
+	public Client(String prenume, String nume, String id, String cnp, Cont listaConturi) {
 		super();
 		this.nume = nume;
 		this.prenume = prenume;
@@ -46,16 +47,16 @@ public class Client {
 		this.cnp = cnp;
 	}
 	
-	public List<Cont> getListaConturi(){
+	public Cont getListaConturi(){
 		return listaConturi;
 		
 	}
 	public void  afisareListaConturi() {
-		 listaConturi.iterator().next().getContIBAN();
-		 listaConturi.iterator().next().getPin();
-		 listaConturi.iterator().next().getBalanta();
+		 listaConturi.getContIBAN();
+		 listaConturi.getPin();
+		 listaConturi.getBalanta();
 	}
-	public void setListaConturi(List<Cont> listaConturi) {
+	public void setListaConturi(Cont listaConturi) {
 		this.listaConturi = listaConturi;
 	}
 	
@@ -65,6 +66,12 @@ public class Client {
 			check=true;
 		}
 		return check;
+	}
+	
+	@Override
+	public String toString() {
+		return this.nume + ","+prenume + "," + id_client+","+cnp+","+listaConturi.toString();
+
 	}
 
 }
